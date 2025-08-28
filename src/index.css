@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/scrollbar";
+
+
+@theme {
+    --color-primary: #161616;
+    --color-secondary: #e11836;
+    --color-backdrop: #f7f2f4;
+}
+
+html, body {
+    width:100%;
+    overflow-x: hidden;
+}
