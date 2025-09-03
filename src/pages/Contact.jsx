@@ -11,6 +11,8 @@ export default function Contact() {
   const [contactForm] = Form.useForm();
   const [phone, setPhone] = useState('');
   const [country, setCountry] = useState('Nigeria');
+  const GOOGLE_MAP = import.meta.env.VITE_GOOGLE_MAP;
+  const SITEKEY = import.meta.env.VITE_CAPTCHA_SITEKEY;
 
   const handleSubmit = (values) => {
     console.log('Form values:', values);
@@ -29,12 +31,11 @@ export default function Contact() {
 
       <section className="py-5 px-4">
         <div className="container max-w-4xl mx-auto flex flex-col md:flex-row-reverse gap-3">
-
           <aside className="flex-1">
             <h3 className="text-xl md:text-2xl text-primary font-semibold">Our Office</h3>
             <div className="relative h-40 md:h-60 rounded-md bg-backdrop overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.347312891393!2d7.4688640738489225!3d9.032047588943644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b9d7d7024ff%3A0xbd2f3a36f8723b9a!2sKilishi%20Market!5e0!3m2!1sen!2sng!4v1756383580513!5m2!1sen!2sng"
+                src={GOOGLE_MAP}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -44,24 +45,21 @@ export default function Contact() {
               />
             </div>
 
-            <div  className=" flex flex-row p-2 md:p-4 text-primary">
-
+            <div className=" flex flex-row p-2 md:p-4 text-primary">
               <div className="h-8 w-8 md:w-10 bg-backdrop rounded-full grid place-items-centre text-base md:text-lg text-secondary">
-                <RiMapPinLine/>
+                <RiMapPinLine />
               </div>
 
               <div className="relative max-w-[14rem]">
                 <h4 className="text-sm font-semibold">Our Address</h4>
-                <p className="text-xs text-primary/70 font-semibold">8,Sarakoro Str, Off Blantyre Crescent, Wuse 2, FCT-Abuja, Nigeria</p>
+                <p className="text-xs text-primary/70 font-semibold">
+                  8,Sarakoro Str, Off Blantyre Crescent, Wuse 2, FCT-Abuja, Nigeria
+                </p>
               </div>
-
-              
-
             </div>
             <div className=" flex flex-row p-2 md:p-4 text-primary">
-
               <div className="h-8 w-8 md:w-9 md:h-9 bg-backdrop rounded-full grid place-items-centre text-base md:text-lg text-secondary">
-                <RiMapPinLine/>
+                <RiMapPinLine />
               </div>
 
               <div className="relative max-w-[14rem]">
@@ -70,9 +68,6 @@ export default function Contact() {
                 <p className="text-xs text-primary/70 font-semibold">Saturday: 10:00AM - 2:00PM</p>
                 <p className="text-xs text-primary/70 font-semibold">Sunday: Closed</p>
               </div>
-
-              
-
             </div>
           </aside>
 
@@ -126,8 +121,8 @@ export default function Contact() {
               <Form.Item label="Country" required>
                 <CountryDropdown
                   value={country}
-                  onChange={value => {
-                    contactForm.setFieldValue("country", value);
+                  onChange={(value) => {
+                    contactForm.setFieldValue('country', value);
                     setCountry(value);
                   }}
                   className="w-full py-1 px-4 border border-slate-200 rounded-md"
@@ -135,17 +130,16 @@ export default function Contact() {
               </Form.Item>
 
               <Form.Item
-                name={"region"}
-                label={"State/Region"}
+                name={'region'}
+                label={'State/Region'}
                 rules={[{ required: true, message: 'Region is required' }]}
                 children={
                   <RegionDropdown
                     country={country}
-                    onChange={value => contactForm.setFieldValue("region", value)}
+                    onChange={(value) => contactForm.setFieldValue('region', value)}
                     className="w-full py-1 px-4 border border-slate-200 rounded-md"
                   />
                 }
-
               />
 
               <Form.Item
@@ -159,15 +153,14 @@ export default function Contact() {
                   className="w-full py-1 px-4 border border-slate-200 rounded-md"
                 />
               </Form.Item>
-                
-                <div className="g-recaptcha" data-sitekey='6Lckvq0rAAAAAFaYI6kgQBSlJfkb51DrO0wo42Jp'></div>
+
+              <div className="g-recaptcha" data-sitekey={SITEKEY}></div>
               <button
                 type="submit"
                 className="px-6 py-2 rounded-lg bg-primary text-white font-semibold w-max cursor-pointer flex items-center gap-2"
               >
                 Submit
               </button>
-
             </Form>
           </aside>
         </div>

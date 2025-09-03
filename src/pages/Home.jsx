@@ -50,7 +50,7 @@ export default function Home() {
 
               {/* Text */}
               <div className="md:w-1/2 z-10 mt-8 px-8">
-                <h1 className="text-white text-5xl md:text-6xl font-light mb-6 leading-tight">
+                <h1 data-aos='fade-down-left' data-aos-delay="1000" className="text-white text-5xl md:text-6xl font-light mb-6 leading-tight">
                   {slide.title.split(" ").map((word, i) =>
                     word.toLowerCase() === "luxury" ? (
                       <span key={i} className="font-semibold">
@@ -83,22 +83,22 @@ export default function Home() {
       {/* About & Contact Section */}
       <section className="bg-white grid grid-cols-1 md:grid-cols-2 gap-0 px-0 py-0 w-full">
         <div className="p-10 md:p-16">
-          <p className="text-sm md:text-base w-max relative before:absolute before:h-0.5 before:w-12 before:bg-primary before:left-[120%] before:top-1/2 before:translate-y-1/2">
+          <p data-aos="fade-down" className="text-sm md:text-base w-max relative before:absolute before:h-0.5 before:w-12 before:bg-primary before:left-[120%] before:top-1/2 before:translate-y-1/2">
             About
           </p>
-          <h3 className="text-4xl font-serif font-semibold mb-4">this car</h3>
-          <p className="text-gray-700 text-base leading-relaxed">
+          <h3 data-aos="fade-down" data-aos-delay="1000" className="text-4xl font-serif font-semibold mb-4">this car</h3>
+          <p data-aos="zoom-out" data-aos-delay="2000" className="text-gray-700 text-base leading-relaxed">
             The Mercedes AMG-GT is a stunning sports car that combines luxury
             and performance...
           </p>
         </div>
         <div className="bg-primary flex flex-col justify-center p-10 md:p-16 text-white">
-          <h3 className="text-xl font-semibold mb-4">
+          <h3 data-aos='fade-down-left' data-aos-delay="1000" className="text-xl font-semibold mb-4">
             Any type of query & Discussion
           </h3>
-          <p className="mb-2">Call us: +234 906 9792 022</p>
-          <p className="mb-2">texcarsluxury@gmail.com</p>
-          <p>Gwarinpa, Abuja</p>
+          <p data-aos='zoom-in-left' data-aos-delay="100" className="mb-2">Call us: +234 906 9792 022</p>
+          <p data-aos='fade-left' data-aos-delay="1000" className="mb-2">texcarsluxury@gmail.com</p>
+          <p data-aos='fade-up-left' data-aos-delay="1000">Gwarinpa, Abuja</p>
         </div>
       </section>
 
@@ -111,21 +111,21 @@ export default function Home() {
           This is a step-by-step guide on how to use our services.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-primary text-white rounded-lg p-8 flex flex-col items-center">
+          <div data-aos='fade-down-right' data-aos-delay="1000" className="bg-primary text-white rounded-lg p-8 flex flex-col items-center">
             <span className="text-4xl mb-4">👤</span>
             <h3 className="font-semibold mb-2 text-lg">Create account</h3>
             <p className="text-center text-gray-300 text-sm">
               Create a new account with your personal information.
             </p>
           </div>
-          <div className="bg-primary text-white rounded-lg p-8 flex flex-col items-center">
+          <div data-aos='zoom-in' data-aos-delay="1000" className="bg-primary text-white rounded-lg p-8 flex flex-col items-center">
             <span className="text-4xl mb-4">🚗</span>
             <h3 className="font-semibold mb-2 text-lg">Book your ride</h3>
             <p className="text-center text-gray-300 text-sm">
               Select a car and a time slot.
             </p>
           </div>
-          <div className="bg-primary text-white rounded-lg p-8 flex flex-col items-center">
+          <div data-aos='fade-down-left' data-aos-delay="1000" className="bg-primary text-white rounded-lg p-8 flex flex-col items-center">
             <span className="text-4xl mb-4">🕒</span>
             <h3 className="font-semibold mb-2 text-lg">Book your time</h3>
             <p className="text-center text-gray-300 text-sm">

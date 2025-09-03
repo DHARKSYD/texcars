@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { AiOutlineCar } from 'react-icons/ai'
 import { Link, useLocation } from 'react-router-dom'
 import { PiShoppingCartLight } from 'react-icons/pi'
-import { RiMenu3Fill, RiCloseLine } from 'react-icons/ri'
+import { RiMenu3Fill, RiCloseLine, RiAccountBox2Fill } from 'react-icons/ri'
 import { useSelector } from 'react-redux'
 
 export default function Header() {
@@ -53,6 +53,9 @@ export default function Header() {
               {cart?.length ?? 0}
             </span>
           </Link>
+
+          <Link to="/login" className="relative p-2 text-base md:text-lg bg-secondary text-white hover:bg-primary hover:text-secondary px-2 py-2 rounded-md">
+            <RiAccountBox2Fill /></Link>
           {/* Hamburger for mobile */}
           <button
             className="md:hidden p-2 text-base text-[#222] hover:bg-[#e11836] hover:text-white rounded-md"

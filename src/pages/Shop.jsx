@@ -3,15 +3,16 @@ import toast from 'react-hot-toast';
 import { ASSETS } from '../assets';
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../features/reducers/cartSlice";
-import ProductCard from "../components/ProductCard"; // <-- import ProductCard
+import ProductCard from "../components/ProductCard"; 
 
 export default function Shop() {
   const [allCars, setAllCars] = useState([]);
   const [loading, setLoading] = useState(false);
   const cart = useSelector(state => state.cart);
   const dispatch = useDispatch();
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-  // Map car names to your images and prices
+  
   const carData = {
     "Mercedes AMG-GT": {
       image: ASSETS.mercedes_race_car_removebg_preview,
@@ -36,7 +37,7 @@ export default function Shop() {
     setLoading(true);
     toast.loading("Fetching cars, please wait...", { key: "123", duration: 3000 });
     try {
-      const res = await fetch(`https://688cb598cd9d22dda5ce2f0d.mockapi.io/api/cars`);
+      const res = await fetch(BASE_URL);
       const data = await res.json();
       setAllCars(data);
       toast.dismiss("123");
