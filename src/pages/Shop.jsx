@@ -68,7 +68,7 @@ export default function Shop() {
 
       {/* Car Section */}
       <section className="py-10 px-4 space-y-10">
-        <div className="container mx-auto space-y-10">
+        <div className="container mx-auto space-y-10 mt-10">
           <h2 className="text-3xl md:text-4xl font-bold text-center">Explore Our Cars</h2>
           <p className="text-center text-lg md:text-xl opacity-70">
             Browse through our collection of luxury cars and find the perfect one for you.
