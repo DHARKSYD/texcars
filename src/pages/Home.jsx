@@ -30,9 +30,9 @@ export default function Home() {
   ];
 
   return (
-    // Add pt-24 (or adjust as needed for your header height)
+    
     <main className="pt-24">
-      {/* Top Bar removed */}
+      
       {/* Swiper Slideshow */}
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}

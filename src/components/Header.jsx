@@ -22,8 +22,7 @@ export default function Header() {
   ]
 
   return (
-    // Fix: full width, but margin-left for sidebar
-    <header className="bg-white p-2 md:p-4 md:rounded-full fixed top-0 left-0 w-full z-50 shadow-lg"
+    <header className="bg-white p-2 md:p-4 md:rounded-full fixed w-[90%] md:w-full z-50 shadow-lg"
       
     >
       <div className="flex justify-between items-center gap-2 w-full">
@@ -34,11 +33,11 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex flex-1 justify-center gap-2">
           {navLinks.map(link => (
-            link.path === "/contact" ?
-            <a key={link.id} href={link.path} className="text-[#222] hover:bg-[#e11836] hover:text-white px-2 py-2 rounded-md text-md font-medium">
-              {link.name}
-            </a>
-            :
+            //link.path === "/contact" ?
+            //<a key={link.id} href={link.path} className="text-[#222] hover:bg-[#e11836] hover:text-white px-2 py-2 rounded-md text-md font-medium">
+             // {link.name}
+            //</a>
+            //:
             <Link key={link.id} to={link.path} className="text-[#222] hover:bg-[#e11836] hover:text-white px-2 py-2 rounded-md text-md font-medium">
               {link.name}
             </Link>
